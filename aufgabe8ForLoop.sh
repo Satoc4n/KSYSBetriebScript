@@ -68,17 +68,17 @@ echo "]" >> $output_file
 echo "The sensor values are logged in $output_file!"
 
 # Delete the '#' after done with testing. We are not using variables in the places of userName and password since we only have one patient at the moment.
-curl -u "KonstiHeidt:kGQjm]|&4f6_Yr7C" -X POST -H "Content-Type: application/json" -d @$output_file http://134.103.214.247:8000/patients/3/sensor-values
+curl -u "patientUsername:patientPassowrd" -X POST -H "Content-Type: application/json" -d @$output_file http://IPAddress/patients/3/sensor-values
 
 
 : <<'COMMENT_END'
-multiple lines of comments are cool
+multiple line comments are cool
 Curl variables can be modified by following code, i think. And don't we need to save the hashed_password and the protected userName locally so we have access to it??
  
 userName="usernamePatient"
 password="passwordPatient"
-server_address="134.103.214.247" # Server IP never changes in our case.
-port="8000" # Port also stays the same.
+server_address="IPAddressOfTheServer" # Server IP never changes in our case.
+port="PortOfTheServer" # Port also stays the same.
 patient_id="patientID"
 
 curl -u "$username:$password" \
